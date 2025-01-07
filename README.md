@@ -123,16 +123,17 @@ O fluxo de navegação da aplicação está estruturado para proporcionar uma ex
 ---
 ## Capturas de Ecrã
 ### Ecrã de Login
-<img src="https://github.com/user-attachments/assets/240307ce-dd76-4a0e-b5ec-26e5d5c21a18" alt="imagem_2025-01-07_183111576" width="300"/>
+<img src="https://github.com/user-attachments/assets/240307ce-dd76-4a0e-b5ec-26e5d5c21a18" alt="imagem_2025-01-07_183111576" width="200"/>
 
 ### Ecrã de Registo
-<img src="https://github.com/user-attachments/assets/2bcee093-9dca-4e2d-bed0-e9f146777caf" alt="Captura de ecrã 2025-01-07 183121" width="300"/>
+<img src="https://github.com/user-attachments/assets/2bcee093-9dca-4e2d-bed0-e9f146777caf" alt="Captura de ecrã 2025-01-07 183121" width="200"/>
 
 ### Adicionar Tarefa
-<img src="https://github.com/user-attachments/assets/a9f3bc83-9ff6-4fda-9655-a28287748702" alt="imagem_2025-01-07_183339172" width="300"/>
+<img src="https://github.com/user-attachments/assets/a9f3bc83-9ff6-4fda-9655-a28287748702" alt="imagem_2025-01-07_183339172" width="200"/>
 
 ### Calendário de Tarefas
-<img src="https://github.com/user-attachments/assets/0bb5d8a9-0268-4ff1-9e44-8bbf419d6a72" alt="imagem_2025-01-07_183355001" width="300"/>
+<img src="https://github.com/user-attachments/assets/0bb5d8a9-0268-4ff1-9e44-8bbf419d6a72" alt="imagem_2025-01-07_183355001" width="200"/>
 
 ### Seletor de Data
-<img src="https://github.com/user-attachments/assets/757e3d6a-2d6f-4358-9584-630acf13ec3f" alt="imagem_2025-01-07_183408690" width="300"/>
+<img src="https://github.com/user-attachments/assets/757e3d6a-2d6f-4358-9584-630acf13ec3f" alt="imagem_2025-01-07_183408690" width="200"/>
+
