@@ -6,15 +6,16 @@ Esta aplicação foi desenvolvida no âmbito da disciplina de **Desenvolvimento 
 ---
 
 ## Índice
-- [Descrição do Projeto](#-descrição-do-projeto)  
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)  
-- [Funcionalidades](#-funcionalidades)  
-- [Arquitetura do Projeto](#-arquitetura-do-projeto)  
-- [Funções e Componentes Principais](#-funções-e-componentes-principais)  
-- [Gestão de Notificações](#-gestão-de-notificações)  
-- [Segurança e Autenticação](#-segurança-e-autenticação)  
-- [Desafios e Soluções Técnicas](#-desafios-e-soluções-técnicas)  
-- [Capturas de Ecrã](#-capturas-de-ecrã)  
+- [Descrição do Projeto](#descrição-do-projeto)  
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)  
+- [Funcionalidades](#funcionalidades)  
+- [Arquitetura do Projeto](#arquitetura-do-projeto)  
+- [Funções e Componentes Principais](#funções-e-componentes-principais)  
+- [Fluxo de Navegação](#fluxo-de-navegação)  
+- [Gestão de Notificações](#gestão-de-notificações)  
+- [Segurança e Autenticação](#segurança-e-autenticação)  
+- [Desafios e Soluções Técnicas](#desafios-e-soluções-técnicas)  
+- [Capturas de Ecrã](#capturas-de-ecrã)  
 
 ---
 
@@ -83,6 +84,16 @@ O projeto segue a arquitetura **MVVM (Model-View-ViewModel)**, garantindo uma se
 
 ---
 
+## Fluxo de Navegação
+O fluxo de navegação da aplicação está estruturado para proporcionar uma experiência fluida e intuitiva:
+
+1. **Ecrã de Login** – O utilizador inicia sessão ou regista-se.  
+2. **Calendário (Ecrã Principal)** – Após o login, é apresentado o calendário com as tarefas.  
+3. **Adição/Edição de Tarefas** – A partir do ecrã principal, o utilizador pode adicionar ou editar tarefas.  
+4. **Notificações** – As tarefas agendadas enviam lembretes automáticos.  
+
+---
+
 ## Gestão de Notificações
 ### NotificationWorker.kt
 - `doWork` – Função responsável por enviar notificações de lembrete. Esta função é invocada pelo `WorkManager`, garantindo que as notificações sejam disparadas mesmo quando a aplicação está em segundo plano.  
@@ -100,17 +111,14 @@ O projeto segue a arquitetura **MVVM (Model-View-ViewModel)**, garantindo uma se
 ---
 
 ## Desafios e Soluções Técnicas
-### 1. Implementação de Notificações em Segundo Plano  
-**Desafio:** As notificações não estavam a ser disparadas quando a aplicação estava fechada.  
-**Solução:** A integração do **WorkManager** garantiu que as notificações fossem enviadas de forma periódica e fiável, mesmo quando a aplicação não estava em execução ativa.  
+1. **Notificações em Segundo Plano**  
+   **Solução:** Implementação do WorkManager para execução periódica e envio de lembretes.  
 
-### 2. Sincronização de Dados  
-**Desafio:** Implementar uma forma eficiente de guardar tarefas localmente sem comprometer o desempenho.  
-**Solução:** Utilização do **Room Database** para persistência local, garantindo performance e integridade dos dados.  
+2. **Persistência de Tarefas**  
+   **Solução:** Utilização do Room Database para armazenamento persistente.  
 
-### 3. Navegação Complexa  
-**Desafio:** Gerir a navegação entre múltiplos ecrãs sem sobrecarregar o `MainActivity`.  
-**Solução:** Uso do **Navigation Component** para centralizar e organizar a navegação, proporcionando uma experiência de utilizador fluida.  
+3. **Navegação Dinâmica**  
+   **Solução:** Navigation Component para centralizar e gerir a navegação sem estados conflitantes.  
 
 ---
 
