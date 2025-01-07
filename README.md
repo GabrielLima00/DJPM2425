@@ -13,8 +13,8 @@ Esta aplicação foi desenvolvida durante a disciplina de **Desenvolvimento de J
 - [Funções e Componentes Principais](#-funções-e-componentes-principais)
 - [Gestão de Notificações](#-gestão-de-notificações)
 - [Segurança e Autenticação](#-segurança-e-autenticação)
+- [Desafios e Soluções Técnicas](#-desafios-e-soluções-técnicas)
 - [Capturas de Ecrã](#-capturas-de-ecrã)
-- [Futuras Implementações](#-futuras-implementações)
 
 ---
 
@@ -99,17 +99,23 @@ O projeto segue a arquitetura **MVVM (Model-View-ViewModel)**, garantindo separa
 
 ---
 
+## 🧩 Desafios e Soluções Técnicas
+### 1. Implementação de Notificações em Segundo Plano  
+**Desafio:** As notificações não estavam a ser disparadas quando a aplicação estava fechada.  
+**Solução:** A integração do **WorkManager** garantiu que as notificações fossem enviadas de forma periódica e confiável, mesmo quando a aplicação não estava em execução ativa.
+
+### 2. Sincronização de Dados  
+**Desafio:** Implementar uma forma eficiente de guardar tarefas localmente sem comprometer o desempenho.  
+**Solução:** Utilização do **Room Database** para persistência local, garantindo performance e segurança.
+
+### 3. Navegação Complexa  
+**Desafio:** Gerir a navegação entre múltiplos ecrãs sem sobrecarregar o `MainActivity`.  
+**Solução:** Uso do **Navigation Component** para centralizar e organizar a navegação, garantindo uma experiência de utilizador fluida.
+
+---
+
 ## 📸 Capturas de Ecrã
 Adiciona aqui algumas capturas de ecrã do funcionamento da aplicação.  
 Exemplo:  
 ![Login Screen](./screenshots/login_screen.png)  
 ![Calendar View](./screenshots/calendar_view.png)  
-
----
-
-## 🔮 Futuras Implementações
-- [ ] Integração com Google Calendar  
-- [ ] Notificações recorrentes para tarefas diárias  
-- [ ] Modo escuro  
-- [ ] Sincronização na cloud  
-- [ ] Suporte a múltiplos utilizadores  
