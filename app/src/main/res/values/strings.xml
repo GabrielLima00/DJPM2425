@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">taskmanager</string>
+    <string name="channel_name">Notificações de Tarefas</string>
+    <string name="channel_description">Lembretes e notificações de tarefas agendadas</string>
+</resources>
