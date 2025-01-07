@@ -10,12 +10,11 @@ Esta aplicação foi desenvolvida durante a disciplina de **Desenvolvimento de J
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Funcionalidades](#-funcionalidades)
 - [Arquitetura do Projeto](#-arquitetura-do-projeto)
-- [Como Correr o Projeto](#-como-correr-o-projeto)
+- [Funções e Componentes Principais](#-funções-e-componentes-principais)
+- [Gestão de Notificações](#-gestão-de-notificações)
+- [Segurança e Autenticação](#-segurança-e-autenticação)
 - [Capturas de Ecrã](#-capturas-de-ecrã)
 - [Futuras Implementações](#-futuras-implementações)
-- [Contribuições](#-contribuições)
-- [Autores](#-autores)
-- [Licença](#-licença)
 
 ---
 
@@ -33,7 +32,8 @@ Permite gerir tarefas, agendar compromissos e visualizar eventos num calendário
 - **Linguagem de Programação:** Kotlin  
 - **Framework UI:** Jetpack Compose  
 - **Arquitetura:** MVVM (Model-View-ViewModel)  
-- **Outras Ferramentas:** Android Studio, Navigation Component, WorkManager (para notificações)  
+- **Notificações:** WorkManager  
+- **Navegação:** Navigation Component  
 
 ---
 
@@ -47,37 +47,69 @@ Permite gerir tarefas, agendar compromissos e visualizar eventos num calendário
 ---
 
 ## 🏗️ Arquitetura do Projeto
-O projeto segue a arquitetura **MVVM (Model-View-ViewModel)**, que separa a lógica de interface da lógica de negócio, garantindo uma aplicação modular e fácil de manter.
+O projeto segue a arquitetura **MVVM (Model-View-ViewModel)**, garantindo separação clara entre a lógica de negócio, interface do utilizador e gestão de dados.
 
-- **Modelos (Models):**  
-  Representação das entidades principais, como o modelo `Task.kt`, que define a estrutura de uma tarefa.  
+- **Model (Modelo de Dados):**  
+  Representação das entidades como `Task.kt`, que define as tarefas com campos de título, descrição, e data.  
 
-- **ViewModels:**  
-  - `AddTaskViewModel.kt` – Lógica de criação e edição de tarefas.  
-  - `LoginViewModel.kt` – Gestão do processo de login e autenticação.  
+- **ViewModel:**  
+  - `AddTaskViewModel.kt` – Controla a lógica de adição e edição de tarefas.  
+  - `LoginViewModel.kt` – Gere a autenticação e comunicação com o repositório de utilizadores.  
   - `SignUpViewModel.kt` – Lida com o registo de novos utilizadores.  
 
-- **Repositórios (Repositories):**  
-  - `AuthRepository.kt` – Lógica de autenticação e comunicação com bases de dados ou serviços.  
-  - `TaskRepository.kt` – Gestão das tarefas, desde a criação até à eliminação.  
+- **Repository:**  
+  - `AuthRepository.kt` – Responsável pela lógica de autenticação.  
+  - `TaskRepository.kt` – Faz a gestão de tarefas, permitindo adicionar, editar e eliminar.  
 
 - **UI (Interface de Utilizador):**  
-  - `CalendarScreen.kt` – Ecrã de calendário para visualizar tarefas.  
-  - `AddTaskView.kt` – Interface para adicionar novas tarefas.  
-  - `LoginScreen.kt` e `SignupScreen.kt` – Ecrãs de autenticação e registo.  
-
-- **Notificações:**  
-  - `NotificationWorker.kt` e `TaskNotificationManager.kt` – Gerem as notificações automáticas para lembretes de tarefas, garantindo que o utilizador não se esqueça dos seus compromissos.  
+  - `CalendarScreen.kt` – Apresenta um calendário interativo com as tarefas registadas.  
+  - `AddTaskView.kt` – Formulário para criar ou editar tarefas.  
+  - `LoginScreen.kt` – Ecrã de login e registo.  
 
 ---
 
-## 🚀 Como Correr o Projeto
-### Requisitos
-- Android Studio (versão 2022.1 ou superior)  
-- SDK Android 30+  
-- Emulador ou dispositivo físico para testes
+## 🔧 Funções e Componentes Principais
+### MainActivity.kt
+- **`onCreate`** – Inicializa a interface e gere a navegação principal.  
+- **`TaskManagerApp`** – Define a navegação entre diferentes ecrãs, usando o `NavHost`.  
 
-### Passos
-1. Clona o repositório:  
-   ```bash
-   git clone https://github.com/teu-username/taskmanager.git
+### Navegação
+- **`NavHost` em `TaskManagerApp`** – Centraliza a navegação entre `LoginScreen`, `CalendarScreen`, `AddTaskView`.  
+
+### TaskRepository.kt
+- **`getTasks`** – Retorna uma lista de tarefas do utilizador.  
+- **`addTask`** – Adiciona uma nova tarefa.  
+- **`deleteTask`** – Elimina uma tarefa com base no ID.  
+
+---
+
+## 🔔 Gestão de Notificações
+### NotificationWorker.kt
+- **`doWork`** – Função responsável por enviar notificações de lembrete. Esta função é invocada pelo `WorkManager`, que assegura que as notificações sejam disparadas mesmo quando a aplicação está em segundo plano.  
+- **Configuração:**  
+  As notificações são configuradas através do `TaskNotificationManager.kt`, que define a aparência e o comportamento do alerta.  
+
+---
+
+## 🔐 Segurança e Autenticação
+- **Registo e Login:**  
+  - `LoginViewModel` e `SignUpViewModel` comunicam com o `AuthRepository` para validar credenciais.  
+  - **Validação Básica:** As passwords e emails são verificados localmente antes de serem enviados para o repositório de autenticação.  
+  - **Persistência:** Sessões podem ser guardadas localmente para manter o utilizador autenticado.  
+
+---
+
+## 📸 Capturas de Ecrã
+Adiciona aqui algumas capturas de ecrã do funcionamento da aplicação.  
+Exemplo:  
+![Login Screen](./screenshots/login_screen.png)  
+![Calendar View](./screenshots/calendar_view.png)  
+
+---
+
+## 🔮 Futuras Implementações
+- [ ] Integração com Google Calendar  
+- [ ] Notificações recorrentes para tarefas diárias  
+- [ ] Modo escuro  
+- [ ] Sincronização na cloud  
+- [ ] Suporte a múltiplos utilizadores  
