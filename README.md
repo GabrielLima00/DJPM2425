@@ -123,7 +123,17 @@ O fluxo de navegação da aplicação está estruturado para proporcionar uma ex
 ---
 
 ## Capturas de Ecrã
-Adiciona aqui algumas capturas de ecrã do funcionamento da aplicação.  
-Exemplo:  
-![Login Screen](./screenshots/login_screen.png)  
-![Calendar View](./screenshots/calendar_view.png)  
+### Ecrã de Login
+![Login Screen](./screenshots/login.png)  
+
+### Ecrã de Registo
+![Registo Screen](./screenshots/registo.png)  
+
+### Adicionar Tarefa
+![Adicionar Tarefa](./screenshots/add_tarefa.png)  
+
+### Calendário de Tarefas
+![Calendário](./screenshots/calendario.png)  
+
+### Seletor de Data
+![Seletor de Data](./screenshots/seletor_data.png)  
