@@ -1,6 +1,4 @@
 # Task Manager App
-
-Bem-vindo ao repositório do **Task Manager App**!  
 Esta aplicação foi desenvolvida no âmbito da disciplina de **Desenvolvimento de Jogos para Plataformas Móveis** e tem como objetivo facilitar a gestão de tarefas diárias através de uma interface intuitiva e responsiva para dispositivos móveis Android.
 
 ---
@@ -34,7 +32,6 @@ Permite gerir tarefas, agendar compromissos e visualizar eventos num calendário
 - **Framework UI:** Jetpack Compose  
 - **Arquitetura:** MVVM (Model-View-ViewModel)  
 - **Notificações:** WorkManager  
-- **Navegação:** Navigation Component  
 
 ---
 
@@ -43,7 +40,6 @@ Permite gerir tarefas, agendar compromissos e visualizar eventos num calendário
 - Gestão de Tarefas – Criar, editar e eliminar tarefas.  
 - Autenticação – Login e registo de utilizadores.  
 - Notificações de Tarefas – Notificações automáticas para lembrar o utilizador de tarefas agendadas.  
-- Sincronização de Dados – Armazenamento de dados local com possibilidade de sincronização futura.  
 
 ---
 
@@ -117,11 +113,8 @@ O fluxo de navegação da aplicação está estruturado para proporcionar uma ex
 2. **Persistência de Tarefas**  
    **Solução:** Utilização do Room Database para armazenamento persistente.  
 
-3. **Navegação Dinâmica**  
-   **Solução:** Navigation Component para centralizar e gerir a navegação sem estados conflitantes.  
-
 ---
-## Capturas de Ecrã
+## Prints
 ### Ecrã de Login
 <img src="https://github.com/user-attachments/assets/240307ce-dd76-4a0e-b5ec-26e5d5c21a18" alt="imagem_2025-01-07_183111576" width="200"/>
 
