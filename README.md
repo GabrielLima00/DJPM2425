@@ -13,7 +13,7 @@ Esta aplicação foi desenvolvida no âmbito da disciplina de **Desenvolvimento 
 - [Gestão de Notificações](#gestão-de-notificações)  
 - [Segurança e Autenticação](#segurança-e-autenticação)  
 - [Desafios e Soluções Técnicas](#desafios-e-soluções-técnicas)  
-- [Capturas de Ecrã](#capturas-de-ecrã)  
+- [Prints](#prints)  
 
 ---
 
